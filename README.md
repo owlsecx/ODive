@@ -18,13 +18,18 @@
 
 ## 📌 Overview
 
-Deep LFI/RFI/traversal detection. Built-in
+ODive detects Local/Remote File Inclusion and path traversal issues on authorised web targets. It ships built-in paths, PHP wrapper coverage, encoding variants, multi-parameter scanning, and confidence scoring, plus an offline sandbox self-test that needs no network. Designed for defensive application security testing.
 
 ---
 
 ## ✨ Features
 
-- LFI / RFI / Path Traversal Scanner — encodings, wrappers, multi-param & offline sandbox
+- Full LFI scan, quick single-path probe, and optional RFI module
+- Multi-parameter auto-scan across query inputs
+- Encoding and PHP wrapper coverage with OS profile controls
+- Offline --sandbox self-test with no network required
+- Confidence scoring and optional cloud-metadata RFI probes (opt-in)
+- TXT reporting with thread, delay, and timeout tuning
 
 ---
 
@@ -38,7 +43,10 @@ Deep LFI/RFI/traversal detection. Built-in
 ## 🚀 Usage
 
 ```bash
-./ODive
+./ODive --url 'https://app.example/view' --param page --scan
+./ODive --url 'https://app.example/view?page=1' --quick
+./ODive --sandbox --os linux
+./ODive --help
 ```
 
 ---
